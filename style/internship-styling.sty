@@ -1,0 +1,23 @@
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref} % Hides hideous yellow box on links
+
+%%
+%%	Fonts
+%%
+
+% Available types: \sfdefault \rmdefault \ttdefault
+\renewcommand{\sfdefault}{cmss}
+
+% Set default font-family to sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+%%
+%%	Front-page styling
+%%
+\let\LaTeXtitle\title
+\renewcommand{\title}[1]{\LaTeXtitle{\color{red}{\LARGE #1}}}
+
+%%
+%%	Colors
+%%
