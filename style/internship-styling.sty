@@ -16,7 +16,17 @@
 %%	Front-page styling
 %%
 \let\LaTeXtitle\title
-\renewcommand{\title}[1]{\LaTeXtitle{\color{red}{\LARGE #1}}}
+\renewcommand{\title}[1]{
+	\LaTeXtitle{
+		{
+			\huge{
+				\color{red}{
+					#1\\
+				}
+			}
+		}
+	}
+}
 
 %%
 %%	Colors
