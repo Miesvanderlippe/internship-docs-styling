@@ -19,12 +19,35 @@
 \renewcommand{\title}[1]{
 	\LaTeXtitle{
 		{
-			\huge{
-				\color{red}{
+			\vspace{5mm}
+			\centering\huge{
+				\color{gray}{
 					#1\\
 				}
 			}
 		}
+	}
+}
+
+\let\LaTeXauthor\author
+\renewcommand{\author}[1]{
+	\LaTeXauthor{
+		{
+			\vspace{5mm}
+			\centering\large{
+				#1\\
+			}
+		}
+	}
+}
+
+\providecommand{\titlepageversion}{
+	{
+		\begin{center}
+		{
+			Versie: \versionnumber
+		}
+		\end{center}
 	}
 }
 
