@@ -23,51 +23,49 @@
 
 % Allow access to raw title
 \let\LaTeXtitle\title
-\renewcommand{\title}[1]{
-	\LaTeXtitle{
-		#1
-	}
-}
+\renewcommand{\title}[1]{\LaTeXtitle{#1}}
 
 \providecommand{\stylizedtitle}
 {
 	{
-		\vspace{5mm}
-		\centering\huge{
-			\color{gray}{
-				\thetitle \\
+		\noindent\hspace*{-2.5cm}
+		{
+			\colorbox{nfirdarkblue}
+			{
+				\makebox[17cm][l]{
+					\hspace*{1.8cm}\fontfamily{\familydefault}\selectfont
+					{
+						\color{white}\huge\textbf{\thetitle}
+					}
+				}
 			}
-		}
+		}\\
 	}
 }
 
 \let\LaTeXauthor\author
-\renewcommand{\author}[1]{
-	\LaTeXauthor{
-		#1
-	}
-}
+\renewcommand{\author}[1]{\LaTeXauthor{#1}}
 
 \providecommand{\stylizedauthor}
 {
 	{
-		\vspace{5mm}
-		\centering\large{
-			\theauthor\\
-		}
-	}
-}
-
-
-\providecommand{\titlepageversion}{
-	{
-		\begin{center}
+		\noindent\hspace*{-2.5cm}
 		{
-			Versie: \versionnumber
-		}
-		\end{center}
+			\colorbox{nfirdarkblue}
+			{
+				\makebox[15cm][l]{
+					\hspace*{1.8cm}\fontfamily{\familydefault}\selectfont
+					{
+						\color{white}\large\textbf{\theauthor}
+					}
+				}
+			}
+		}\\
 	}
 }
+
+
+\providecommand{\titlepageversion}{\noindent{Versie \versionnumber}\\}
 
 %%
 %%	Colors
@@ -117,8 +115,8 @@
 		}
 	}
 	
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
+	\renewcommand{\headrulewidth}{0mm}
+	\renewcommand{\footrulewidth}{0mm}
 }
 
 \pagestyle{fancy} 						%% Set normal pages to fancy so headers and footers show
