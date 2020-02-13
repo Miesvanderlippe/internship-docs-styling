@@ -17,15 +17,22 @@
 %%
 %%	Front-page styling
 %%
+
+% Allow access to raw title
 \let\LaTeXtitle\title
 \renewcommand{\title}[1]{
 	\LaTeXtitle{
-		{
-			\vspace{5mm}
-			\centering\huge{
-				\color{gray}{
-					#1\\
-				}
+		#1
+	}
+}
+
+\providecommand{\stylizedtitle}
+{
+	{
+		\vspace{5mm}
+		\centering\huge{
+			\color{gray}{
+				\thetitle \\
 			}
 		}
 	}
@@ -34,14 +41,20 @@
 \let\LaTeXauthor\author
 \renewcommand{\author}[1]{
 	\LaTeXauthor{
-		{
-			\vspace{5mm}
-			\centering\large{
-				#1\\
-			}
+		#1
+	}
+}
+
+\providecommand{\stylizedauthor}
+{
+	{
+		\vspace{5mm}
+		\centering\large{
+			\theauthor\\
 		}
 	}
 }
+
 
 \providecommand{\titlepageversion}{
 	{
