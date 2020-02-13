@@ -8,29 +8,44 @@
 \usepackage{style/a4-document-setup}
 \usepackage{style/internship-styling}
 
-\providecommand{\versionnumber}{0.1.1}
+\providecommand{\versionnumber}{0.1.2}
 
 \author{Mies van der Lippe}
 \title{LaTex Styling}
 
 \begin{document}
-
-\input{template-cover.tex}
-\tableofcontents
-\newpage
-
-\section{Introduction}
-This is an introduction. 
-
-\newpage
-
-\section{The First Section}
-This is text within a section. 
-
-\subsection{The first subsection}
-This is a subsection.
-
-\subsubsection{A sub-sub section}
-This shouldn't be numbered. 
-
+	\input{template-cover.tex}
+	\tableofcontents
+	\newpage
+	\section{Introduction}
+	This is an introduction. 
+	
+	\newpage
+	
+	\section{The First Section}
+	This is text within a section. 
+	
+	\subsection{The first subsection}
+	This is a subsection.
+	
+	\subsubsection{A sub-sub section}
+	This shouldn't be numbered. 
+	
+	\section{Tabular}
+	Tables should have stylized headers. 
+	
+	\begin{table}[!h]
+		\begin{tabular}{|p{2cm}|p{2.5cm}|p{11cm}|} \hline
+			Column 1	& Column2	& Some longer content\\\hline
+			Row1	& Date1	& Table with some content\\\hline	
+			Row2	& Date2	& Table with some content that overflows onto the next line. It should be fairly long to make it to the next line.\\\hline	
+			Row3	& Date3	& Table with some content\\\hline	
+		\end{tabular}
+		\caption{This is a table caption}
+	\end{table} 
+	
+	\listoffigures
+	\listoftables
+	
+	
 \end{document}

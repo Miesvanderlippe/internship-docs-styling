@@ -1,6 +1,9 @@
 \usepackage{color}
 \usepackage{xcolor}
-\usepackage[hidelinks]{hyperref} % Hides hideous yellow box on links
+\usepackage[hidelinks]{hyperref}	% Hides hideous yellow box on links
+
+\usepackage{fancyhdr}				% fancy headers / footers
+\usepackage{lastpage}				% provides last page refference used for page 1/5 in footer
 
 \renewcommand{\thesection}{\arabic{section}}
 
@@ -69,3 +72,56 @@
 %%
 %%	Colors
 %%
+\definecolor{nfirdarkblue}{HTML}{242098}
+
+\providecommand{\footerpagenumber}
+{
+	\thepage / \pageref{LastPage}
+}
+
+\newlength{\page@number@width}
+\settowidth{\page@number@width}{\footerpagenumber}
+\addtolength{\page@number@width}{6mm}
+
+\providecommand{\headerversion}
+{
+	Version: \versionnumber
+}
+
+
+\providecommand{\hiddenstyle}
+{
+	\fancyhead[L,C,R]{}
+	\fancyfoot[L,C,R]{}
+}
+
+\providecommand{\fancyhdrstyle}
+{
+	\fancyhead[L]{\thetitle}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	
+	\fancyfoot[L]{\theauthor}
+	\fancyfoot[C]{\headerversion}
+	\fancyfoot[R]{
+		{
+			\colorbox{nfirdarkblue}
+			{
+				\makebox[\page@number@width][c]{
+					\fontfamily{\familydefault}\selectfont
+					{
+						\color{white}\textbf{\footerpagenumber}
+					}
+				}
+			}			
+		}
+	}
+	
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{fancy} 						%% Set normal pages to fancy so headers and footers show
+\fancyhdrstyle							%% Enable the fancy footers for normal pages
+\fancypagestyle{plain}{\fancyhdrstyle}	%% Override plain page style so styling shows up on list of figures etc. 
+\fancypagestyle{hidefootersheaders}{\hiddenstyle}
