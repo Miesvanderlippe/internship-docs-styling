@@ -149,3 +149,25 @@
 }
 \makeatother
 
+
+%%
+%%	Better lists
+%%
+
+\newcounter{cnt:prefixed-list-counter}
+%% This counter resets when counter in bracket rolls over. 
+\newcounter{subcnt:prefixed-list-counter}[cnt:prefixed-list-counter]
+
+%% Label name, counter pre-fix, Item content. 
+\providecommand\prefixeditem[3]{\item\stepcounter{cnt:prefixed-list-counter}\customlabel{#1}{#2\arabic{cnt:prefixed-list-counter}: #3}}
+%% Label name, counter pre-fix, Item content. 
+\providecommand\prefixedsubitem[3]{\item\stepcounter{subcnt:prefixed-list-counter}\customlabel{#1}{#2\arabic{cnt:prefixed-list-counter}.\arabic{subcnt:prefixed-list-counter}: #3}}
+
+\providecommand\prefixedsubitems[1]{\begin{itemize}#1\end{itemize}}
+
+\providecommand\resetprefixeditemcounters{
+	\setcounter{cnt:prefixed-list-counter}{0}
+	\setcounter{subcnt:prefixed-list-counter}{0}
+}
+
+

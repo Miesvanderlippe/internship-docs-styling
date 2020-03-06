@@ -67,6 +67,55 @@
 	
 	\nameref{labeltarget}
 	
+	\newpage
+		
+	\section{Custom numbered lists}
+	In order to label products I've written a few simple commands that allow users to pre-fix and automatically 
+	label lists. 
+	
+	\begin{itemize}
+		\prefixeditem{a-descriptibe-label}{A}{This is the first item in a list}\\
+		This is a pre-fixed item. See how it's automatically labeled A1? No need to manually label your products
+		anymore. 
+				
+		\prefixedsubitems{
+			\prefixedsubitem{nested-list-item}{A}{Nested list!}\\
+			There's a function for nested lists too!
+			
+			\prefixedsubitem{beauty}{A}{Beauty}\\
+			They work pretty well. 
+		}
+	
+		\prefixeditem{roll-over-demo}{A}{Automatic roll-over for subitems}\\
+		See how sub-items start over at 1?
+		\prefixedsubitems{
+			\prefixedsubitem{rolled-over-item}{A}{Testing 1 2}\\
+			No need to do that manually. 
+		}
+		
+	\end{itemize}
+	
+	There's no automatic rollover on primary items. 
+	
+	\begin{itemize}
+		\prefixeditem{continuation}{A}{We're continueing to count}\\
+		This should be item 3. 
+	\end{itemize}
+
+	You can manually reset the counters with a simple command. 
+	
+	\resetprefixeditemcounters{}
+	\begin{itemize}
+		\prefixeditem{continuation-b}{B}{New list, new numbers}\\
+		This should be item 1. 
+	\end{itemize}
+	
+	You can have some more control over the numbering by setting the counters manually. They're increased on every
+	item or subitem. The subitem counter is reset on incrementing the primary counter. 
+	
+	This is a reference to our product "\nameref{continuation-b}". You can now see what it's value is. When we re-order
+	the list, or add products all references and counts are updated automatically. 
+	
 	\listoffigures
 	\listoftables
 	
