@@ -170,4 +170,21 @@
 	\setcounter{subcnt:prefixed-list-counter}{0}
 }
 
+%%
+%%	Progressbar
+%%
+\colorlet{turbobarprimary}{nfirdarkblue}
+\colorlet{turbobarbackground}{nfirdarkblue!20}
+\providecommand\turbobarheight{2ex}
 
+\providecommand\setturbobarheight[1]{\renewcommand\turbobarheight{#1}}
+\providecommand\setturbobarprimary[1]{\colorlet{turbobarprimary}{#1}}
+\providecommand\setturbobarbackground[1]{\colorlet{turbobarbackground}{#1}}
+
+\providecommand\resetturbobarheight[1]{\renewcommand\turbobarheight{2ex}}
+\providecommand\resetturbbarcolors{
+	\setturbobarprimary{nfirdarkblue}
+	\setturbobarbackground{nfirdarkblue!20}
+}
+
+\providecommand\turbobar[3]{\textcolor{turbobarbackground}{\rlap{\rule{#3}{\turbobarheight}}}\textcolor{turbobarprimary}{\rule{(#3/#2)*#1}{\turbobarheight}}}

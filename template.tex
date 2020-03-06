@@ -67,6 +67,28 @@
 	
 	\nameref{labeltarget}
 	
+	\subsection{Progress bars}
+	This function creates progressbars. You can set width, progress, max steps.
+	
+	\turbobar{4}{10}{\textwidth}
+	
+	You can define custom colors and height too. 
+	
+	\setturbobarheight{10mm}
+	\setturbobarprimary{red}
+	\setturbobarbackground{green}
+	
+	\turbobar{6}{10}{\textwidth}
+	
+	But please reset them after. 
+	
+	\resetturbobarheight{}
+	\resetturbbarcolors{}
+	
+	You've got to label them yourself.
+	
+	{2/10}~\turbobar{2}{10}{\textwidth/2}
+	
 	\newpage
 		
 	\section{Custom numbered lists}
