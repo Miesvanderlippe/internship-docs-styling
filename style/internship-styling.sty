@@ -90,6 +90,10 @@
 \settowidth{\page@number@width}{\footerpagenumber}
 \addtolength{\page@number@width}{6mm}
 
+%%
+%% Headers, footers
+%%
+
 \providecommand{\headerversion}
 {
 	Version: \versionnumber
@@ -132,3 +136,16 @@
 \fancyhdrstyle							%% Enable the fancy footers for normal pages
 \fancypagestyle{plain}{\fancyhdrstyle}	%% Override plain page style so styling shows up on list of figures etc. 
 \fancypagestyle{hidefootersheaders}{\hiddenstyle}
+
+%%
+%%	Custom labels
+%%
+
+%% Allows user control of label contents. 
+\makeatletter
+\newcommand{\customlabel}[2]{%
+	\protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+	\hypertarget{#1}{#2}
+}
+\makeatother
+
